@@ -11,8 +11,41 @@
       <button class="button-delete" (click)="eliminaToDo(singolo)">
         Elimina
       </button>
+      <a class="modified-button" href="">Modifica</a>
     </tr>
   </tbody>
 </table>
 
-<div class="caricamento" *ngIf="todo.length <= 0">Recupero Task...</div>
+<div
+  *ngIf="!todo.length && areTodos != false"
+  aria-busy="true"
+  aria-label="Loading"
+  role="progressbar"
+  class="container"
+>
+  <div class="swing">
+    <div class="swing-l"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="swing-r"></div>
+  </div>
+  <div class="shadow">
+    <div class="shadow-l"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="shadow-r"></div>
+  </div>
+</div>
+<div class="container" *ngIf="areTodos === false">
+  <img
+    src="https://cdn.dribbble.com/users/1053528/screenshots/4261269/media/b81055909c88d9f7dfd6a49ff6d8f63f.png?resize=400x0"
+    alt=""
+  />
+  <h1>Lista vuota</h1>
+</div>

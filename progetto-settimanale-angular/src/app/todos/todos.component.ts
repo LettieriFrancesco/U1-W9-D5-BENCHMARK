@@ -11,14 +11,15 @@ import { Router } from '@angular/router';
 export class TodosComponent {
   newTodo: Partial<Todo> = new Todo('', 0);
   message: string = '';
+  areTodos!: boolean;
   constructor(private todoSvc: TodoService, private router: Router) {}
 
   creaToDo() {
     this.todoSvc.create(this.newTodo).then((res) => {
-      this.message = `Evento creato con successo!`;
+      this.message = `Aggiunto alla lista!`;
       setTimeout(() => {
         this.router.navigate(['/completati']);
-      }, 3000);
+      }, 1000);
     });
   }
 }

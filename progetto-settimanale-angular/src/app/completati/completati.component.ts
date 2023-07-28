@@ -9,12 +9,18 @@ import { TodoService } from '../todo.service';
 })
 export class CompletatiComponent {
   todo: Todo[] = [];
+  areTodos!: boolean;
 
   constructor(private todoSvc: TodoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.todoSvc.getAll().then((todo) => {
       this.todo = todo;
+      if (this.todo.length > 0) {
+        this.areTodos = true;
+      } else {
+        this.areTodos = false;
+      }
     });
   }
   eliminaToDo(singolo: Todo) {
