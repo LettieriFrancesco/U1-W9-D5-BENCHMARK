@@ -15,7 +15,7 @@ export class TodosComponent {
 
   creaToDo() {
     this.todoSvc.create(this.newTodo).then((res) => {
-      this.message = `Evento Creato`;
+      this.message = `Evento creato con successo!`;
       setTimeout(() => {
         this.router.navigate(['/completati']);
       }, 3000);

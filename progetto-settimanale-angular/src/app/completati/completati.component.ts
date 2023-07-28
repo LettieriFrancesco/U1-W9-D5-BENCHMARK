@@ -17,9 +17,9 @@ export class CompletatiComponent {
       this.todo = todo;
     });
   }
-  eliminaToDo(todo: Todo) {
-    this.todoSvc.delete(todo).then(() => {
-      this.todo = this.todo.filter((t) => t.id != todo.id);
+  eliminaToDo(singolo: Todo) {
+    this.todoSvc.delete(singolo).then(() => {
+      this.todo = this.todo.filter((t) => t.id != singolo.id);
     });
   }
 }

@@ -1,12 +1,3 @@
 {
-  "todo": [
-    {
-      "todo": "Fare la spesa",
-      "id": 1
-    },
-    {
-      "todo": "lorem ipsium",
-      "id": 2
-    }
-  ]
+  "todo": []
 }

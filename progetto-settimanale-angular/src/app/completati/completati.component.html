@@ -6,11 +6,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let todo of todo">
-      <td>{{ todo.todo }}</td>
-      <button class="button-delete" (click)="eliminaToDo(todo)">Elimina</button>
+    <tr *ngFor="let singolo of todo">
+      <td>{{ singolo.todo }}</td>
+      <button class="button-delete" (click)="eliminaToDo(singolo)">
+        Elimina
+      </button>
     </tr>
   </tbody>
 </table>
 
-<div class="caricamento" *ngIf="!todo.length">Caricamento in corso...</div>
+<div class="caricamento" *ngIf="todo.length <= 0">Recupero Task...</div>
