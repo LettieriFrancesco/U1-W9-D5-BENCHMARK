@@ -1,0 +1,11 @@
+<form>
+  <input
+    type="text"
+    name="todo"
+    [(ngModel)]="newTodo.todo"
+    placeholder="Scrivi qui la tua ToDoList..."
+    class="form-control"
+  />
+
+  <button (click)="creaToDo()">+</button>
+</form>

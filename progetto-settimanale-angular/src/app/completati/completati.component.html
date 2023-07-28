@@ -1,0 +1,16 @@
+<table class="content-table">
+  <thead>
+    <tr class="active-row">
+      <th>Cose da fare</th>
+      <th>Azioni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todo">
+      <td>{{ todo.todo }}</td>
+      <button class="button-delete" (click)="eliminaToDo(todo)">Elimina</button>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caricamento" *ngIf="!todo.length">Caricamento in corso...</div>
