@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-completati',
@@ -11,7 +12,7 @@ export class CompletatiComponent {
   todo: Todo[] = [];
   areTodos!: boolean;
 
-  constructor(private todoSvc: TodoService) {}
+  constructor(private todoSvc: TodoService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.todoSvc.getAll().then((todo) => {
@@ -21,6 +22,11 @@ export class CompletatiComponent {
       } else {
         this.areTodos = false;
       }
+      // this.route.params.subscribe((params: any) => {
+      //   this.todoSvc.getById(params.id).then((res) => {
+      //     this.todo = todo;
+      //   });
+      // });
     });
   }
   eliminaToDo(singolo: Todo) {

@@ -11,7 +11,9 @@
       <button class="button-delete" (click)="eliminaToDo(singolo)">
         Elimina
       </button>
-      <a class="modified-button" href="">Modifica</a>
+      <a class="modified-button" [routerLink]="['/todo', todo]" href=""
+        >Modifica</a
+      >
     </tr>
   </tbody>
 </table>
@@ -44,8 +46,9 @@
 </div>
 <div class="container" *ngIf="areTodos === false">
   <img
-    src="https://cdn.dribbble.com/users/1053528/screenshots/4261269/media/b81055909c88d9f7dfd6a49ff6d8f63f.png?resize=400x0"
+    class="img-completati"
+    src="https://media.tenor.com/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif"
     alt=""
   />
-  <h1>Lista vuota</h1>
+  <h1>Lista Vuota</h1>
 </div>

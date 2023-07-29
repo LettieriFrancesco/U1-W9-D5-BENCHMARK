@@ -10,4 +10,6 @@
   <button (click)="creaToDo()">+</button>
 </form>
 <h1 id="messaggioEventoCreato">{{ message }}</h1>
-<div *ngIf=""></div>
+<div *ngFor="let todo of newTodo.todo">
+  <p>{{ todo }}</p>
+</div>

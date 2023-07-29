@@ -12,9 +12,21 @@ export class TodoService {
   getAll(): Promise<Todo[]> {
     return fetch(this.apiUrl).then((res) => res.json());
   }
+  getById(id: number): Promise<Todo> {
+    return fetch(this.apiUrl + '?id=' + id).then((res) => res.json());
+  }
   create(todo: Partial<Todo>): Promise<Todo> {
     return fetch(this.apiUrl, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(todo),
+    }).then((res) => res.json());
+  }
+  modified(todo: Todo) {
+    return fetch(this.apiUrl + '/' + todo.id, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
